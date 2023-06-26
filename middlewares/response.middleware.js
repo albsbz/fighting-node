@@ -36,9 +36,7 @@ const responseMiddleware = (req, res, next) => {
     }
   } else {
     code = 200;
-    response = {
-      data: res.data,
-    };
+    response = res.data;
   }
   res.status(code).send(JSON.stringify(response));
   next();

@@ -9,6 +9,10 @@ router.post(
   (req, res, next) => {
     try {
       // TODO: Implement login action (get the user if it exist with entered credentials)
+      const data = authService.login({
+        email: req.body.email,
+        password: req.body.password,
+      });
       res.data = data;
     } catch (err) {
       res.err = err;
